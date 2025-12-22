@@ -1,14 +1,61 @@
 ---
 layout: default
 ---
+<!-- 网站标题 -->
 <h1>{{ site.title }}</h1>
-<p>{{ site.description }}</p>
+
+<!-- 网站介绍（使用intro字段，支持HTML格式） -->
+<div class="site-intro">
+  {{ site.intro }}
+</div>
+
+<!-- 可选：添加一些样式让显示更美观 -->
+<style>
+  .site-intro {
+    line-height: 1.6;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0366d6;
+  }
+  .site-intro strong {
+    color: #24292e;
+    font-size: 1.2em;
+  }
+  .site-intro em {
+    color: #6a737d;
+    font-style: italic;
+  }
+</style>
 
 <h2>最新文章</h2>
-<ul>
+<ul class="post-list">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})
+    <li class="post-item">
+      <a href="{{ post.url }}">{{ post.title }}</a> 
+      <span class="post-date">({{ post.date | date: "%Y-%m-%d" }})</span>
     </li>
   {% endfor %}
 </ul>
+
+<!-- 可选：添加一些列表样式 -->
+<style>
+  .post-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .post-item {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eaecef;
+  }
+  .post-item:hover {
+    background: #f6f8fa;
+  }
+  .post-date {
+    color: #6a737d;
+    font-size: 0.9em;
+    margin-left: 0.5rem;
+  }
+</style>
