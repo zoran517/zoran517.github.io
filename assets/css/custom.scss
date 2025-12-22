@@ -1,45 +1,22 @@
----
----
-/* 你的自定义样式 */
-
-/* 1. 文章内容换行规则 */
-.post-content {
-  white-space: pre-line;
-  line-height: 1.6;
+/* 确保站点内容区域的最大宽度和居中，与主题协调 */
+.wrapper {
+  max-width: 800px; /* 控制内容区域的最大宽度 */
+  margin: 0 auto;   /* 水平居中 */
+  padding: 0 20px;  /* 两侧留出呼吸空间 */
 }
 
-/* 2. 从你的index.html迁移过来的样式 */
-.site-intro {
-  line-height: 1.6;
-  margin: 2rem 0;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 4px solid #0366d6;
-}
-.site-intro strong {
-  color: #24292e;
-  font-size: 1.2em;
-}
-.site-intro em {
-  color: #6a737d;
-  font-style: italic;
+/* 优化站点标题样式，使其更突出 */
+h1.site-title, .page-content h1:first-of-type {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50; /* 深色，更易读 */
 }
 
+/* 优化文章列表，增加可读性 */
 .post-list {
-  list-style: none;
-  padding-left: 0;
+  margin-top: 2rem;
 }
 .post-item {
-  margin-bottom: 0.8rem;
-  padding: 0.8rem;
-  border-bottom: 1px solid #eaecef;
-}
-.post-item:hover {
-  background: #f6f8fa;
-}
-.post-date {
-  color: #6a737d;
-  font-size: 0.9em;
-  margin-left: 0.5rem;
+  transition: background-color 0.2s ease;
 }
