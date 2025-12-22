@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-CN' }}">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
@@ -8,34 +8,60 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <!-- 链接你的自定义样式 -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-    <!-- 可选：引入字体等 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <!-- 页头区域 (可放置站点标题/导航) -->
-    <header class="site-header">
-      <div class="wrapper">
-        <!-- 你可以在这里添加导航，或保留为空 -->
-        <!-- 例如：<a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a> -->
-      </div>
-    </header>
+</head>
+<body>
+    <!-- 核心：整个页面内容都包裹在这个wrapper中确保整体居中 -->
+    <div class="site-wrapper">
+        <!-- 页头区域 -->
+        <header class="site-header">
+            <div class="wrapper">
+                <!-- 站点标题可以放在这里 -->
+                <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+            </div>
+        </header>
 
-    <!-- 核心内容区域：Minima使用 `.wrapper` 控制宽度和居中 -->
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <!-- 所有使用此布局的页面内容将在这里注入 -->
-        {{ content }}
-      </div>
-    </main>
+        <!-- 主要内容区域 -->
+        <main class="page-content" aria-label="Content">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </main>
 
-    <!-- 页脚区域 -->
-    <footer class="site-footer">
-      <div class="wrapper">
-        <!-- 你可以在这里添加页脚信息 -->
-        <p>© {{ 'now' | date: "%Y" }} {{ site.title }}. 由 Jekyll 驱动。</p>
-      </div>
-    </footer>
-  </body>
+        <!-- 页脚区域 -->
+        <footer class="site-footer">
+            <div class="wrapper">
+                <p>© {{ 'now' | date: "%Y" }} {{ site.title }}. 由 Jekyll 驱动。</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 内联CSS确保居中生效 -->
+    <style>
+        /* 确保整个站点内容区域居中 */
+        .site-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* 确保每个wrapper都居中 */
+        .wrapper {
+            width: 100%;
+            max-width: 800px;  /* 控制内容最大宽度 */
+            margin: 0 auto;    /* 这是实现居中的关键 */
+            padding: 0 20px;   /* 左右留白 */
+            box-sizing: border-box;
+        }
+        
+        /* 确保页脚在底部 */
+        .page-content {
+            flex: 1;
+        }
+        
+        /* 首页标题特别居中 */
+        .page-content h1:first-of-type {
+            text-align: center;
+        }
+    </style>
+</body>
 </html>
