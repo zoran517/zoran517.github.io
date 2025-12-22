@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'zh-CN' }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}
-    </title>
-
-    <!-- 链接主题默认样式 -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <!-- 链接主题样式 -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-    
-    <!-- 链接你的自定义样式 (必须放在后面才能覆盖主题样式) -->
+    <!-- 链接你的自定义样式 -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-</head>
-<body>
-    <!-- 这是所有使用此布局的页面的公共框架 -->
-    <div class="site-container">
-        
-        <!-- 你可以在这里添加导航栏等公共部分 -->
-        <!-- <nav>...</nav> -->
-        
-        <!-- 核心：当前页面的内容会注入到这里 -->
-        <main class="site-content">
-            {{ content }}
-        </main>
-        
-        <!-- 你可以在这里添加页脚等公共部分 -->
-        <!-- <footer>...</footer> -->
-        
-    </div>
-</body>
+    <!-- 可选：引入字体等 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- 页头区域 (可放置站点标题/导航) -->
+    <header class="site-header">
+      <div class="wrapper">
+        <!-- 你可以在这里添加导航，或保留为空 -->
+        <!-- 例如：<a class="site-title" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a> -->
+      </div>
+    </header>
+
+    <!-- 核心内容区域：Minima使用 `.wrapper` 控制宽度和居中 -->
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- 所有使用此布局的页面内容将在这里注入 -->
+        {{ content }}
+      </div>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer class="site-footer">
+      <div class="wrapper">
+        <!-- 你可以在这里添加页脚信息 -->
+        <p>© {{ 'now' | date: "%Y" }} {{ site.title }}. 由 Jekyll 驱动。</p>
+      </div>
+    </footer>
+  </body>
 </html>
