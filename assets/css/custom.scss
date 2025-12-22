@@ -20,14 +20,15 @@ h1.site-title, .page-content h1:first-of-type {
 .post-item {
   transition: background-color 0.2s ease;
 }
-/* 调整文章页面标题与正文的间距 */
-.post-content h1:first-of-type,
-.post-content h2:first-of-type {
-  margin-bottom: 0.5em; /* 减小标题下方的间距，默认通常为1.5em或更大 */
+/* 安全方案：只影响文章正文区域，不干扰首页 */
+article h2:first-of-type,
+.post-content h2:first-of-type, 
+.entry-content h2:first-of-type {
+  margin-bottom: 0.5em !important; /* 使用 !important 确保覆盖主题样式 */
 }
 
-/* 调整文章内所有段落的顶部间距 */
-.post-content p {
-  margin-top: 0.5em; /* 减小段落上方的间距 */
-  margin-bottom: 1em; /* 保持段落下方原有间距 */
+article h2:first-of-type + p,
+.post-content h2:first-of-type + p,
+.entry-content h2:first-of-type + p {
+  margin-top: 0.2em !important;
 }
