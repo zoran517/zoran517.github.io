@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}
+    </title>
+
+    <!-- 链接主题默认样式 -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    
+    <!-- 链接你的自定义样式 (必须放在后面才能覆盖主题样式) -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+</head>
+<body>
+    <!-- 这是所有使用此布局的页面的公共框架 -->
+    <div class="site-container">
+        
+        <!-- 你可以在这里添加导航栏等公共部分 -->
+        <!-- <nav>...</nav> -->
+        
+        <!-- 核心：当前页面的内容会注入到这里 -->
+        <main class="site-content">
+            {{ content }}
+        </main>
+        
+        <!-- 你可以在这里添加页脚等公共部分 -->
+        <!-- <footer>...</footer> -->
+        
+    </div>
+</body>
+</html>
