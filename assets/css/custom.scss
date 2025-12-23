@@ -1,3 +1,6 @@
+scss
+---
+---
 /* 确保站点内容区域的最大宽度和居中，与主题协调 */
 .wrapper {
   max-width: 800px; /* 控制内容区域的最大宽度 */
@@ -20,18 +23,7 @@ h1.site-title, .page-content h1:first-of-type {
 .post-item {
   transition: background-color 0.2s ease;
 }
-/* 安全方案：只影响文章正文区域，不干扰首页 */
-article h2:first-of-type,
-.post-content h2:first-of-type, 
-.entry-content h2:first-of-type {
-  margin-bottom: 0.5em !important; /* 使用 !important 确保覆盖主题样式 */
-}
 
-article h2:first-of-type + p,
-.post-content h2:first-of-type + p,
-.entry-content h2:first-of-type + p {
-  margin-top: 0.2em !important;
-}
 /* ========== 首页专属样式 ========== */
 /* 1. 网站介绍区域 - 蓝色方框 */
 .site-intro {
@@ -72,6 +64,23 @@ article h2:first-of-type + p,
 }
 
 /* 3. 首页标题居中（可选） */
+.page-content h1:first-of-type {
+  text-align: center;
+  color: #2c3e50; /* 深蓝色，更稳重 */
+}
+
+/* 安全方案：只影响文章正文区域，不干扰首页 */
+article h2:first-of-type,
+.post-content h2:first-of-type, 
+.entry-content h2:first-of-type {
+  margin-bottom: 0.5em !important; /* 使用 !important 确保覆盖主题样式 */
+}
+
+article h2:first-of-type + p,
+.post-content h2:first-of-type + p,
+.entry-content h2:first-of-type + p {
+  margin-top: 0.2em !important;
+}* 3. 首页标题居中（可选） */
 .page-content h1:first-of-type {
   text-align: center;
   color: #2c3e50; /* 深蓝色，更稳重 */
