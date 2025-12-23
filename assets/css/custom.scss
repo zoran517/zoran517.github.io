@@ -38,3 +38,9 @@
   font-size: 0.9em;
   margin-left: 0.5rem;
 }
+/* 强制文章页面中的段落保留换行 */
+.post-content p,
+.entry-content p {
+  white-space: pre-line !important;
+  line-height: 1.6;
+}
