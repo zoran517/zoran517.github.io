@@ -1,0 +1,40 @@
+---
+---
+/* 网站介绍区域 - 蓝色方框 */
+.site-intro {
+  line-height: 1.6;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #0366d6;
+}
+.site-intro strong {
+  color: #24292e;
+  font-size: 1.2em;
+}
+.site-intro em {
+  color: #6a737d;
+  font-style: italic;
+}
+
+/* 文章列表样式 */
+.post-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+.post-item {
+  margin-bottom: 0.8rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid #eaecef;
+  transition: background-color 0.2s ease;
+}
+.post-item:hover {
+  background: #f6f8fa;
+}
+.post-date {
+  color: #6a737d;
+  font-size: 0.9em;
+  margin-left: 0.5rem;
+}
