@@ -11,6 +11,7 @@ layout: default
 
 <h2>最新文章</h2>
 <ul class="post-list">
+  <!-- 关键：在 site.posts 后面加上了 'reversed'，让早的文章在上 -->
   {% for post in site.posts reversed %}
     <li class="post-item">
       <!-- 应用自定义文章链接颜色 -->
@@ -22,7 +23,7 @@ layout: default
   {% endfor %}
 </ul>
 
-<!-- 可选：添加一些样式让显示更美观 -->
+<!-- 页面内嵌样式 -->
 <style>
   .site-intro {
     line-height: 1.6;
