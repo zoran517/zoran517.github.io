@@ -11,7 +11,7 @@ layout: default
 
 <h2>最新文章</h2>
 <ul class="post-list">
-  <!-- 关键：在 site.posts 后面加上了 'reversed'，让早的文章在上 -->
+  <!-- 按时间升序排列（早的在上） -->
   {% for post in site.posts reversed %}
     <li class="post-item">
       <!-- 应用自定义文章链接颜色 -->
