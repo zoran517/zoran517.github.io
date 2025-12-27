@@ -11,7 +11,7 @@ layout: default
 
 <h2>最新文章</h2>
 <ul class="post-list">
-  {% for post in site.posts %}
+  {% for post in site.posts reversed %}
     <li class="post-item">
       <!-- 应用自定义文章链接颜色 -->
       <a href="{{ post.url }}" style="{% if post.link_color %}color: {{ post.link_color }};{% endif %}">
